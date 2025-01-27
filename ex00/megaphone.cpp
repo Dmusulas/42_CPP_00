@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 22:44:24 by dmusulas          #+#    #+#             */
-/*   Updated: 2025/01/27 05:37:40 by dmusulas         ###   ########.fr       */
+/*   Updated: 2025/01/27 13:51:39 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ int main(int argc, char *argv[]) {
         }
         std::cout << std::endl;
     }
+    return 0;
 }

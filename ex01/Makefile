@@ -6,7 +6,7 @@
 #    By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 07:44:04 by dmusulas          #+#    #+#              #
-#    Updated: 2025/01/27 07:47:19 by dmusulas         ###   ########.fr        #
+#    Updated: 2025/01/27 13:52:53 by dmusulas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,21 +19,21 @@ RM				= rm -rf
 SRCS			= main.cpp PhoneBook.cpp Contact.cpp
 
 OBJS			= $(SRCS:%.cpp=obj/%.o)
-OBJ_DIRS		= $(sort $(dir $(OBJS)))
+OBJ_DIR         = obj
 
 all: $(NAME)
 
-$(OBJ_DIRS):
-		@mkdir -p $@
+$(OBJ_DIR):
+		@mkdir -p $(OBJ_DIR)
 
 $(NAME): $(OBJS)
 		$(CPP) $(CPPFLAGS) $(OBJS) -o $@
 
-obj/%.o: %.cpp | $(OBJ_DIRS)
+obj/%.o: %.cpp | $(OBJ_DIR)
 		$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
-		$(RM) obj
+		$(RM) $(OBJ_DIR)
 
 fclean: clean
 		$(RM) $(NAME)

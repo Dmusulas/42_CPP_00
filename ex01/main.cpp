@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 07:33:14 by dmusulas          #+#    #+#             */
-/*   Updated: 2025/01/27 11:00:23 by dmusulas         ###   ########.fr       */
+/*   Updated: 2025/01/27 14:03:28 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,33 @@ Command parseCommand(const std::string &input) {
     return INVALID;
 }
 
+// TEST:: lazy to come up with names randomization func
+// std::string randomString(const std::string &chars, size_t length) {
+//     std::string result;
+//     for (size_t i = 0; i < length; ++i) {
+//         result += chars[rand() % chars.size()];
+//     }
+//     return result;
+// }
+
 int main() {
-    PhoneBook phoneBook;
     std::string input;
+    PhoneBook phoneBook;
+
+    // TEST:: to check if index wraps with ADD
+    // std::srand(std::time(nullptr));
+    //    const std::string letters = "abcdefghijklmnopqrstuvwxyz";
+    //    const std::string digits = "0123456789";
+    //    for (int i = 0; i < 8; ++i) {
+    //        std::string firstName = randomString(letters, 5);
+    //        std::string lastName = randomString(letters, 7);
+    //        std::string nickname = randomString(letters, 6);
+    //        std::string phoneNumber = randomString(digits, 10);
+    //        std::string darkSecret = randomString(letters, 20);
+    //        Contact newContact(firstName, lastName, nickname, phoneNumber,
+    //                           darkSecret);
+    //        phoneBook.addContact(newContact);
+    //    }
 
     std::cout << "Enter command (ADD, SEARCH, EXIT): ";
     while (std::getline(std::cin, input)) {
@@ -63,5 +87,5 @@ int main() {
         return (EXIT_FAILURE);
     }
 
-    return (0);
+    return (EXIT_SUCCESS);
 }
