@@ -1,6 +1,16 @@
+# Objects
 obj
-en.subject.pdf
+
+# Executables
 megaphone
 phonebook
+account
+
+# Clangd LSP stuff
+.clangd
+compile_commands.json
+.cache
+
+# Other
+en.subject.pdf
 *.log
-tests.cpp
