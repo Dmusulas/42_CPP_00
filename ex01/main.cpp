@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 07:33:14 by dmusulas          #+#    #+#             */
-/*   Updated: 2025/01/27 14:03:28 by dmusulas         ###   ########.fr       */
+/*   Updated: 2025/06/10 18:02:27 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,19 @@ int main() {
     PhoneBook phoneBook;
 
     // TEST:: to check if index wraps with ADD
-    // std::srand(std::time(nullptr));
-    //    const std::string letters = "abcdefghijklmnopqrstuvwxyz";
-    //    const std::string digits = "0123456789";
-    //    for (int i = 0; i < 8; ++i) {
-    //        std::string firstName = randomString(letters, 5);
-    //        std::string lastName = randomString(letters, 7);
-    //        std::string nickname = randomString(letters, 6);
-    //        std::string phoneNumber = randomString(digits, 10);
-    //        std::string darkSecret = randomString(letters, 20);
-    //        Contact newContact(firstName, lastName, nickname, phoneNumber,
-    //                           darkSecret);
-    //        phoneBook.addContact(newContact);
-    //    }
+    // std::srand(time(NULL));
+    // const std::string letters = "abcdefghijklmnopqrstuvwxyz";
+    // const std::string digits = "0123456789";
+    // for (int i = 0; i < 8; ++i) {
+    //     std::string firstName = randomString(letters, 5);
+    //     std::string lastName = randomString(letters, 7);
+    //     std::string nickname = randomString(letters, 6);
+    //     std::string phoneNumber = randomString(digits, 10);
+    //     std::string darkSecret = randomString(letters, 20);
+    //     Contact newContact(firstName, lastName, nickname, phoneNumber,
+    //                        darkSecret);
+    //     phoneBook.addContact(newContact);
+    // }
 
     std::cout << "Enter command (ADD, SEARCH, EXIT): ";
     while (std::getline(std::cin, input)) {
