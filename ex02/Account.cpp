@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 12:09:26 by dmusulas          #+#    #+#             */
-/*   Updated: 2025/06/10 17:37:41 by dmusulas         ###   ########.fr       */
+/*   Updated: 2025/06/10 19:28:51 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ void Account::_displayTimestamp(void) {
 Account::Account(int initial_deposit)
     : _accountIndex(_nbAccounts), _amount(initial_deposit), _nbDeposits(0),
       _nbWithdrawals(0) {
-    if (_accountIndex == 0) {
-    }
     _nbAccounts++;
     _totalAmount += initial_deposit;
 
@@ -61,7 +59,6 @@ Account::~Account(void) {
     _displayTimestamp();
     std::cout << " index:" << _accountIndex << ";amount:" << _amount
               << ";closed" << std::endl;
-    ;
 }
 
 void Account::makeDeposit(int deposit) {
@@ -82,8 +79,9 @@ bool Account::makeWithdrawal(int withdrawal) {
     bool status;
 
     _displayTimestamp();
+    status = false;
     std::cout << " index:" << _accountIndex << ";p_amount:" << _amount;
-    if (withdrawal <= _amount) {
+    if (withdrawal <= _amount && withdrawal > 0) {
         _amount -= withdrawal;
         _totalAmount -= withdrawal;
 
@@ -93,7 +91,6 @@ bool Account::makeWithdrawal(int withdrawal) {
         std::cout << ";withdrawal:" << withdrawal << ";amount:" << _amount
                   << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
     } else {
-        status = false;
         std::cout << ";withdrawal:refused" << std::endl;
     }
 
