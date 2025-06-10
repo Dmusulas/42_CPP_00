@@ -6,7 +6,7 @@
 #    By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 07:44:04 by dmusulas          #+#    #+#              #
-#    Updated: 2025/01/27 13:52:53 by dmusulas         ###   ########.fr        #
+#    Updated: 2025/06/10 18:47:27 by dmusulas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,28 +15,28 @@ CPPFLAGS		= -Wall -Wextra -Werror -std=c++98
 NAME			= phonebook
 MAKE			= make
 RM				= rm -rf
-
-SRCS			= main.cpp PhoneBook.cpp Contact.cpp
-
-OBJS			= $(SRCS:%.cpp=obj/%.o)
-OBJ_DIR         = obj
+SRCDIR			= src
+INCDIR			= include
+SRCS			= $(SRCDIR)/main.cpp $(SRCDIR)/PhoneBook.cpp $(SRCDIR)/Contact.cpp
+OBJS			= $(SRCS:$(SRCDIR)/%.cpp=obj/%.o)
+OBJ_DIR			= obj
 
 all: $(NAME)
 
 $(OBJ_DIR):
-		@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)
 
 $(NAME): $(OBJS)
-		$(CPP) $(CPPFLAGS) $(OBJS) -o $@
+	$(CPP) $(CPPFLAGS) -I$(INCDIR) $(OBJS) -o $@
 
-obj/%.o: %.cpp | $(OBJ_DIR)
-		$(CPP) $(CPPFLAGS) -c $< -o $@
+obj/%.o: $(SRCDIR)/%.cpp | $(OBJ_DIR)
+	$(CPP) $(CPPFLAGS) -I$(INCDIR) -c $< -o $@
 
 clean:
-		$(RM) $(OBJ_DIR)
+	$(RM) $(OBJ_DIR)
 
 fclean: clean
-		$(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
