@@ -6,23 +6,23 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 06:56:36 by dmusulas          #+#    #+#             */
-/*   Updated: 2025/01/27 11:22:35 by dmusulas         ###   ########.fr       */
+/*   Updated: 2025/06/10 17:31:36 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include <iomanip>
-#include <iostream>
+#include <sstream>
+#include <string>
 
 PhoneBook::PhoneBook(void) : _currentCount(0), _oldestContactIndex(0) {}
 
 bool PhoneBook::_handleInputError(void) {
     if (std::cin.eof()) {
         std::cout << "\nEOF detected. Exiting phonebook. Goodbye!\n";
-        std::exit(EXIT_SUCCESS);
+        std::exit(0);
     } else if (std::cin.bad()) {
         std::cerr << "Fatal error: Input stream is corrupted.\n";
-        std::exit(EXIT_FAILURE);
+        std::exit(1);
     } else {
         std::cerr << "Unexpected error: Input stream failed.\n";
         return false;
@@ -45,7 +45,9 @@ bool PhoneBook::_promptNonEmptyInput(const std::string &prompt,
         if (!std::getline(std::cin, retry)) {
             return _handleInputError();
         }
-        std::transform(retry.begin(), retry.end(), retry.begin(), ::toupper);
+        for (size_t i = 0; i < retry.length(); ++i) {
+            retry[i] = std::toupper(retry[i]);
+        }
         if (retry != "Y") {
             return false;
         }
@@ -71,9 +73,12 @@ std::string PhoneBook::_truncateField(const std::string &s) const {
 
 void PhoneBook::displayContact(void) const {
 
-    std::cout << std::setw(10) << "Index" << " | ";
-    std::cout << std::setw(10) << "First Name" << " | ";
-    std::cout << std::setw(10) << "Last Name" << " | ";
+    std::cout << std::setw(10) << "Index"
+              << " | ";
+    std::cout << std::setw(10) << "First Name"
+              << " | ";
+    std::cout << std::setw(10) << "Last Name"
+              << " | ";
     std::cout << std::setw(10) << "Nickname" << std::endl;
     for (int i = 0; i < _currentCount; i++) {
         std::cout << std::setw(10) << i << " | ";
@@ -116,9 +121,8 @@ void PhoneBook::searchContact() const {
     std::getline(std::cin, input);
 
     int index = -1;
-    try {
-        index = std::stoi(input);
-    } catch (...) {
+    std::istringstream iss(input);
+    if (!(iss >> index) || !iss.eof()) {
         std::cout << "Invalid index.\n";
         return;
     }

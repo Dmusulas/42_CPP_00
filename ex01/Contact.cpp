@@ -6,12 +6,11 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 06:40:17 by dmusulas          #+#    #+#             */
-/*   Updated: 2025/01/27 06:57:48 by dmusulas         ###   ########.fr       */
+/*   Updated: 2025/06/10 17:26:43 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include <stdexcept>
 
 Contact::Contact(const std::string &fn, const std::string &ln,
                  const std::string &nn, const std::string &pn,

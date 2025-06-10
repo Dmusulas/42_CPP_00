@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 05:18:15 by dmusulas          #+#    #+#             */
-/*   Updated: 2025/01/27 11:21:56 by dmusulas         ###   ########.fr       */
+/*   Updated: 2025/06/10 17:26:46 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #define PHONEBOOK_HPP
 #define MAX_CONTACTS 8
 #include "Contact.hpp"
+#include <cstdlib>
+#include <iomanip>
+#include <iostream>
 
 class PhoneBook {
 private:
