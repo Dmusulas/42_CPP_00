@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 05:18:15 by dmusulas          #+#    #+#             */
-/*   Updated: 2025/06/10 17:50:55 by dmusulas         ###   ########.fr       */
+/*   Updated: 2025/06/10 19:19:32 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ private:
 public:
     PhoneBook(void);
     void addContact(const Contact &newContact);
-    void displayContact(void) const;
+    void displayContacts(void) const;
     void searchContact(void) const;
     void promptAddContact(void);
 };

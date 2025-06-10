@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 06:56:36 by dmusulas          #+#    #+#             */
-/*   Updated: 2025/06/10 17:31:36 by dmusulas         ###   ########.fr       */
+/*   Updated: 2025/06/10 19:20:32 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ PhoneBook::PhoneBook(void) : _currentCount(0), _oldestContactIndex(0) {}
 bool PhoneBook::_handleInputError(void) {
     if (std::cin.eof()) {
         std::cout << "\nEOF detected. Exiting phonebook. Goodbye!\n";
-        std::exit(0);
+        return true;
     } else if (std::cin.bad()) {
         std::cerr << "Fatal error: Input stream is corrupted.\n";
-        std::exit(1);
+        return true;
     } else {
         std::cerr << "Unexpected error: Input stream failed.\n";
         return false;
@@ -71,7 +71,7 @@ std::string PhoneBook::_truncateField(const std::string &s) const {
     return s;
 }
 
-void PhoneBook::displayContact(void) const {
+void PhoneBook::displayContacts(void) const {
 
     std::cout << std::setw(10) << "Index"
               << " | ";
@@ -114,7 +114,7 @@ void PhoneBook::promptAddContact() {
 }
 
 void PhoneBook::searchContact() const {
-    displayContact();
+    displayContacts();
 
     std::string input;
     std::cout << "Enter index: ";
