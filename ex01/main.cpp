@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 07:33:14 by dmusulas          #+#    #+#             */
-/*   Updated: 2025/06/10 18:02:27 by dmusulas         ###   ########.fr       */
+/*   Updated: 2025/06/10 18:18:47 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int main() {
     PhoneBook phoneBook;
 
     // TEST:: to check if index wraps with ADD
+    // std::cout << "Generating 8 random addresses\n";
     // std::srand(time(NULL));
     // const std::string letters = "abcdefghijklmnopqrstuvwxyz";
     // const std::string digits = "0123456789";
