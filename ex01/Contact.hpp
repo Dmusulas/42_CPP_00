@@ -6,12 +6,11 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 03:06:13 by dmusulas          #+#    #+#             */
-/*   Updated: 2025/06/10 17:23:54 by dmusulas         ###   ########.fr       */
+/*   Updated: 2025/06/10 17:46:49 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-#define CONTACT_HPP
+#pragma once
 #include <stdexcept>
 #include <string>
 
@@ -30,5 +29,3 @@ public:
     std::string getPhoneNumber() const;
     std::string getDarkestSecret() const;
 };
-
-#endif // !CONTACT_HPP
