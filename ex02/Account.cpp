@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 12:09:26 by dmusulas          #+#    #+#             */
-/*   Updated: 2025/01/27 13:38:47 by dmusulas         ###   ########.fr       */
+/*   Updated: 2025/06/10 17:37:41 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void Account::displayAccountsInfos(void) {
 }
 
 void Account::_displayTimestamp(void) {
-    std::time_t now = std::time(nullptr);
+    std::time_t now = std::time(NULL);
     std::tm *localTime = std::localtime(&now);
 
     std::cout << "[" << (localTime->tm_year + 1900) << std::setw(2)
